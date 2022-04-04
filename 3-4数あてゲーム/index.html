@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JAVAVAVA</title>
+    <link href="https://fonts.googleapis.com/css2?family=M+PLUS+1p&display=swap" rel="stylesheet">
+    <link href="CSS/style.css" rel="stylesheet">
+</head>
+<body>
+<header>
+    <div class="container">
+        <h1>タイトル</h1>
+        <h2>サブタイトル</h2>
+    </div>
+</header>
+<main>
+    <div class="container">
+        <section>
+
+        </section>
+    </div>
+</main>
+    <footer>
+        <div class="container">
+            <p>JAVASCRIPT SAMPLES</p>
+        </div>
+    </footer>
+
+    <script>
+        const rand = Math.floor(Math.random() * 6);
+        const number = parseInt(window.prompt("数あてゲーム。0~5の数字を入力してください。"));
+
+        let message;
+
+        if (rand === number) {
+            message = "おめでとうございます！正解です。";
+        }
+        else if(rand < number){
+            message = "正解はもっと小さい数字でした。";
+        }
+        else if (rand > number){
+            message = "正解はもっと大きい数字でした";
+        }
+        else{
+            message = "0~5の数字を入力してください。";
+        }
+        
+        window.alert(message);
+
+    </script>
+</body>
+</html>

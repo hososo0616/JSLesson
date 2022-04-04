@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JAVAVAVA</title>
+    <link href="https://fonts.googleapis.com/css2?family=M+PLUS+1p&display=swap" rel="stylesheet">
+    <link href="CSS/style.css" rel="stylesheet">
+</head>
+<body>
+<header>
+    <div class="container">
+        <h1>タイトル</h1>
+        <h2>サブタイトル</h2>
+    </div>
+</header>
+<main>
+    <div class="container">
+        <section>
+
+        </section>
+    </div>
+</main>
+    <footer>
+        <div class="container">
+            <p>JAVASCRIPT SAMPLES</p>
+        </div>
+    </footer>
+
+    <script>
+        "use strict";
+
+        let monster_HP = 100;
+        let attacking;
+
+        window.alert("戦闘開始");
+
+        while (monster_HP > 0) {
+            attacking = Math.floor(Math.random() * 31);
+            console.log("モンスターに" + attacking + "のダメージ");
+            monster_HP = monster_HP - attacking;
+        }
+
+        console.log("モンスターを撃破したぞ");
+
+    </script>
+</body>
+</html>

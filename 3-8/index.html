@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JAVAVAVA</title>
+    <link href="https://fonts.googleapis.com/css2?family=M+PLUS+1p&display=swap" rel="stylesheet">
+    <link href="CSS/style.css" rel="stylesheet">
+</head>
+<body>
+<header>
+    <div class="container">
+        <h1>タイトル</h1>
+        <h2>サブタイトル</h2>
+    </div>
+</header>
+<main>
+    <div class="container">
+        <section>
+            <p id="output"></p>
+        </section>
+    </div>
+</main>
+    <footer>
+        <div class="container">
+            <p>JAVASCRIPT SAMPLES</p>
+        </div>
+    </footer>
+
+    <script>
+        "use strict";
+
+        function total(price) {
+            const tax = 0.1;
+            return price + price * tax;
+        }
+
+        console.log("コーヒーメーカーの値段は" + total(8000) + "円(税込み)です。");
+
+        document.getElementById("output").textContent =　"コーヒーメーカーの値段は" + total(8000) + "円(税込み)です。";
+    </script>
+</body>
+</html>
