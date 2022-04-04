@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JAVAVAVA</title>
+    <link href="https://fonts.googleapis.com/css2?family=M+PLUS+1p&display=swap" rel="stylesheet">
+    <link href="CSS/style.css" rel="stylesheet">
+</head>
+<body>
+<header>
+    <div class="container">
+        <h1>タイトル</h1>
+        <h2>サブタイトル</h2>
+    </div>
+</header>
+<main>
+    <div class="container">
+        <section>
+
+        </section>
+    </div>
+</main>
+    <footer>
+        <div class="container">
+            <p>JAVASCRIPT SAMPLES</p>
+        </div>
+    </footer>
+
+    <script>
+        "use strict";
+
+        function fizzbuzz(num) {
+            if (num % 3 === 0 && num % 5 === 0){
+                return "FizzBuzz!!";
+            }
+            else if (num % 3 === 0) {
+                return "Fizz!!";
+            }
+            else if (num % 5 === 0){
+                return "Buzz!!";
+            }
+            else{
+                return num;
+            }
+        }
+
+        for (let i = 1; i <= 30; i++) {
+            console.log(fizzbuzz(i));
+        }
+        
+    </script>
+</body>
+</html>
