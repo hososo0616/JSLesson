@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JAVAVAVA</title>
+    <link href="https://fonts.googleapis.com/css2?family=M+PLUS+1p&display=swap" rel="stylesheet">
+    <link href="CSS/style.css" rel="stylesheet">
+
+    <style>
+      .submenu h3{
+        margin: 0 0 1rem 0;
+        font-size: 16px;
+        cursor: pointer;
+        color: #5e78c1;
+      }
+
+      .submenu ul {
+        margin: 0 0 1rem 0;
+        list-style: none;
+        font-size: 14px;
+      }
+
+      .hidden {
+        display: none;
+      }
+    </style>
+  </head>
+
+  <body>
+    <header>
+      <div class="container">
+      </div>
+    </header>
+    <main>
+      <div class="container">
+        <section>
+          <div class="sidebar">
+            <h2>サポートページ</h2>
+            <div class="submenu">
+              <h3>1.初めて使うとき</h3>
+              <ul class="hidden">
+                <li><a href="">概要</a></li>
+                <li><a href="">インストールする</a></li>
+                <li><a href="">アカウントを登録する</a></li>
+                <li><a href="">アンインストールする</a></li>
+              </ul>
+            </div>
+            <div class="submenu">
+              <h3>2.基本的な使い方</h3>
+              <ul class="hidden">
+                <li><a href="">基本的な操作方法</a></li>
+                <li><a href="">元の状態に復元する</a></li>
+                <li><a href="">機能拡張プラグインを追加する</a></li>
+              </ul>
+            </div>
+          </div>
+        </section>
+      </div>
+    </main>
+    <footer>
+      <div class="container">
+      </div>
+    </footer>
+
+    <script src="jquery-3.4.1.min.js"></script>
+    <script>
+      "use strict";
+
+      $(document).ready(function(){
+        $(".submenu h3").on("click", function(){
+          $(this).next().toggleClass("hidden");
+        });
+      });
+    </script>
+  </body>
+
+</html>
