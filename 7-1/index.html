@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JAVAVAVA</title>
+    <link href="https://fonts.googleapis.com/css2?family=M+PLUS+1p&display=swap" rel="stylesheet">
+    <link href="CSS/style.css" rel="stylesheet">
+</head>
+<body>
+<header>
+    <div class="container">
+    </div>
+</header>
+<main>
+    <div class="container">
+        <section>
+          <p>あなたはいま</p>
+          <p id="loc" class="position"></p>
+          <p>の場所にいます。ちなみに精度は半径<span id="accuracy" class="position"></span>mです。</p>
+        </section>
+    </div>
+</main>
+    <footer>
+        <div class="container">
+        </div>
+    </footer>
+
+    <script src="jquery-3.4.1.min.js"></script>
+    <script>
+      "use script";
+
+      function success(pos){
+        const lat = pos.coords.latitude;
+        const lng = pos.coords.longitude;
+        const accuracy = pos.coords.accuracy;
+
+        $("#loc").text(`緯度:${lat} 経度:${lng}`);
+        $("#accuracy").text(accuracy);
+      }
+
+      function fail(error) {
+        alert("位置情報の取得に失敗しました。エラーコード:" + error.code);
+      }
+
+      navigator.geolocation.getCurrentPosition(success,fail);
+    </script>
+</body>
+</html>
