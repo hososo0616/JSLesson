@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>JAVAVAVA</title>
+        <link href="https://fonts.googleapis.com/css2?family=M+PLUS+1p&display=swap" rel="stylesheet">
+        <link href="style.css" rel="stylesheet">
+
+        <style>
+            section img {
+                max-width: 100%;
+            }
+
+            .center {
+                margin: 0 auto o auto;
+                max-width: 90%;
+                width: 500px;
+            }
+
+            ul {
+                display: flex;
+                margin: 0;
+                padding: 0;
+                list-style-type: none;
+            }
+
+            li {
+                flex: 1 1 auto;
+                margin-right: 8px;
+            }
+
+            li:last-of-type {
+                margin-right: 0;
+            }
+        </style>
+    </head>
+
+    <body>
+        <header>
+            <div class="container">
+                <h1>タイトル</h1>
+                <h2>サブタイトル</h2>
+            </div>
+        </header>
+        <main>
+            <div class="container">
+                <section>
+                    <div class="center">
+                        <div>
+                            <img src="img1.jpg" alt="ramy" id="bigimg">
+                        </div>
+                        <ul>
+                            <li><img src="thumb-img1.jpg" alt="a" class="thumb" data-image="img1.jpg"></li>
+                            <li><img src="thumb-img2.jpg" alt="b" class="thumb" data-image="img2.jpg"></li>
+                            <li><img src="thumb-img3.jpg" alt="c" class="thumb" data-image="img3.jpg"></li>
+                            <li><img src="thumb-img4.jpg" alt="d" class="thumb" data-image="img4.jpg"></li>
+                        </ul>
+                    </div>
+                </section>
+            </div>
+        </main>
+        <footer>
+            <div class="container">
+                <p>JAVASCRIPT SAMPLES</p>
+            </div>
+        </footer>
+        <script>
+            "use strict";
+
+            const thumbs = document.querySelectorAll('.thumb');
+            thumbs.forEach(function(item, index){
+                item.onclick = function(){
+                    document.getElementById("bigimg").src = this.dataset.image;
+                }
+            })
+        </script>
+    </body>
+
+</html>
