@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>スライドショー</title>
+    <link href="https://fonts.googleapis.com/css2?family=M+PLUS+1p&display=swap" rel="stylesheet">
+    <link href="CSS/style.css" rel="stylesheet">
+
+    <style>
+      .slide {
+        margin: 0 auto;
+        border: 1px solid black;
+        width: 720px;
+        background-color: black;
+      }
+
+      img {
+        max-width: 100%;
+      }
+
+      .toolbar {
+        overflow: hidden;
+        text-align: center;
+      }
+
+      .nav {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 16px 0;
+      }
+
+      #prev {
+        margin-right: 0.5rem;
+        width: 16px;
+        height: 16px;
+        background: url(arrow-left.svg) no-repeat;
+      }
+
+      #next {
+        margin-left: 0.5rem;
+        width: 16px;
+        height: 16px;
+        background: url(arrow-right.svg) no-repeat;
+      }
+
+      #page {
+        color: white;
+      }
+    </style>
+  </head>
+
+  <body>
+    <header>
+      <div class="container"></div>
+    </header>
+    <main>
+      <div class="container">
+        <section>
+          <div class="slide">
+            <div class="image_box">
+              <img src="ramy1.jpg" alt="a" id="main_image">
+            </div>
+            <div class="toolbar">
+              <div class="nav">
+                <div id="prev"></div>
+                <div id="page"></div>
+                <div id="next"></div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </main>
+    <footer>
+      <div class="container">
+        <p>スライドショー</p>
+      </div>
+    </footer>
+
+    <script>
+      "use strict";
+
+      const images = ["ramy1.jpg", "ramy2.jpg", "ramy3.jpeg", "ramy4.jpeg"];
+      images.forEach(function(item, index) {
+        preloadImage(item);
+      })
+      let current = 0;
+
+      function changeImage(num) {
+        if (current + num >= 0 && current + num < images.length) {
+          current += num;
+          document.getElementById("main_image").src = images[current];
+          pageNum();
+        }
+      }
+
+      function pageNum() {
+        document.getElementById("page").textContent = `${current + 1}/${images.length}`;
+      }
+
+      function preloadImage(path) {
+        let imgTag = document.createElement("img");
+        imgTag.src = path;
+      }
+
+      pageNum();
+
+
+      document.getElementById("prev").onclick = function () {
+        changeImage(-1);
+      }
+
+      document.getElementById("next").onclick = function () {
+        changeImage(1);
+      }
+    </script>
+  </body>
+
+</html>
