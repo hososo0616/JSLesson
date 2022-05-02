@@ -5,7 +5,7 @@ class MobileMenu {
     this.DOM.cover = document.querySelector(".mobile-menu__cover");
     this.DOM.container = document.querySelector("#global-container");
     this.eventType = this._getEventType();
-    this.addEvent();
+    this._addEvent();
   }
 
   _getEventType() {
@@ -23,7 +23,8 @@ class MobileMenu {
   }
 
   _addEvent() {
-    this.DOM.btn.addEventListner("click", this._toggle.bind(this));
+    this.DOM.btn.addEventListener(this.eventType, this._toggle.bind(this));
+    this.DOM.cover.addEventListener(this.eventType, this._toggle.bind(this));
   }
 }
 

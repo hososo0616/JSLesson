@@ -1,14 +1,82 @@
-$cBlack: black;
 $cWhite: white;
+$cBlack: black;
+$cMenuClose: black;
+$cMenuOpen: black;
+
+#container {
+  position: relative;
+  background-color: teal;
+  height: 100vh;
+  z-index: 3;
+  transition: 0.5s;
+}
+
+body {
+  margin: 0;
+}
+
+.header {
+  background-color: $cWhite;
+  height: 100px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.menu-open {
+  & #container {
+    transform: translate(-300px, 60px);
+    box-shadow: 0 8px 40px -10px rgba(0, 0, 0, 0.8);
+  }
+}
+
+.mobile-menu {
+  position: fixed;
+  right: 0;
+  top: 60px;
+
+  &__main {
+    padding: 0;
+    perspective: 200px;
+    transform-style: preserve-3d;
+  }
+
+  &__item {
+    list-style: none;
+    display: block;
+    transform: translate3d(0, 0, -100px);
+    padding: 0 40px;
+    transition: transform 0.3s, opacity 0.2s;
+    // opacity: 0;
+  }
+
+  &__link {
+    display: block;
+    margin-top: 30px;
+    color: $cBlack;
+    text-decoration: none;
+  }
+}
+
+.main-title {
+  font-weight: 600;
+  font-size: 25px
+}
+
+.sub-title {
+  display: block;
+  font-size: 14px;
+  color: #535353;
+}
 
 
-.mobile-menu-icon {
+.mobile-menu__btn {
   background-color: transparent;
   border: none;
   outline: none;
 
-  &  span {
-    background-color: $cBlack;
+  & > span {
+    background-color: $cMenuClose;
     width: 35px;
     height: 2px;
     display: block;
@@ -23,11 +91,10 @@ $cWhite: white;
 }
 
 .menu-open {
-  background-color: $cBlack;
 
-  & .mobile-menu-icon {
+  & .mobile-menu__btn {
     & > span {
-      background-color: $cWhite;
+      background-color: $cMenuOpen;
 
       &:nth-child(1) {
         transform: translateY(11px) rotate(135deg);
